@@ -17,7 +17,7 @@ body{
 }
 h1{
     text-align: center;
-    font-family: 'Satisfy', sans-serif;
+    font-family: 'Satisfy', cursive;
     font-size: 60px !important;
     font-weight: bold !important;
     margin: 10px !important;
@@ -31,7 +31,7 @@ form{
     margin: 0 auto;
 }
 textarea{
-    font-family: 'Julee-Regular', sans-serif;
+    font-family: 'Julee-Regular', cursive;
     background-color: transparent;
     height: 150px;
     width: 400px;
