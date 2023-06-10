@@ -31,6 +31,7 @@ form{
     margin: 0 auto;
 }
 textarea{
+    border: 1px solid ;
     font-family: 'Julee-Regular', cursive;
     background-color: transparent;
     height: 150px;
@@ -46,7 +47,8 @@ textarea{
     resize: none;
 }
 form input:nth-child(1) , form input:nth-child(3){
-    background-color: rgb(43, 255, 43);
+    border: 1px solid transparent;
+    border-radius: 5px;
     margin: 13px;
 }
 form span{

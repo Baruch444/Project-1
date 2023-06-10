@@ -28,28 +28,28 @@ function validate() {
     const date = dateBox.value;
     const time = timeBox.value;
     textBox.style.borderColor , textBox.style.border = "";
-    dateBox.style.backgroundColor = "";
-    timeBox.style.backgroundColor = "";
+    dateBox.style.borderColor = "";
+    timeBox.style.borderColor = "";
     textErr.innerText = "";
-    dateErr.innerText = "";
     timeErr.innerText = "";
+    dateErr.innerText = "";
     if(text === ""){
         textErr.innerText = "Missing Task!";
-        textBox.style.border = "3px solid"
-        textBox.style.borderColor = "red"
-        event.preventDefault();
+        textBox.style.border = "3px solid red"
+        // textBox.style.borderColor = ""
+        window.event.preventDefault();
         return false;
     }
     if(date === ""){
         dateErr.innerText = "Missing Date!!!";
-        dateBox.style.backgroundColor = "red"
-        event.preventDefault();
+        dateBox.style.border = "2px solid red"
+        window.event.preventDefault();
         return false;
     }
     if(time === ""){
         timeErr.innerText = "Missing Time!!!";
-        timeBox.style.backgroundColor = "red"
-        event.preventDefault();
+        timeBox.style.border = "2px solid red"
+        window.event.preventDefault();
         return false;
     }
     return true;

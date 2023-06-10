@@ -6,4 +6,4 @@
 - CSS
 - JavaScript
 ---
-Link: [Link to project](https://github.com/Baruch444/Project-1.git)
+Link: [Link to project](https://baruch444.github.io/Project-1/)
