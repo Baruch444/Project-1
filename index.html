@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="icon" href="tools/פטריק.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 1</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="headLine">My Task Board</h1>
+        
+        <form>
+            <textarea rows="4" type="text" id="textBox"></textarea>
+            <span id="textErr"></span>
+            <div class="row">
+                <input type="date" id="dateBox"/>
+                <span id="dateErr"></span>
+                <input type="time" id="timeBox"/> 
+               <span id="timeErr"></span>
+            </div>
+            <div class="buttons-container">
+                <button type="button" onclick="addTask()">Add the Task</button>
+                <button type="button" onclick="clearForm()">Reset</button>
+            </div>
+                      
+        </form>
+
+        <br/><br/>
+        
+        <section id="sectionBox">
+            
+        </section>
+        
+        
+        
+        
+        
+        
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/28f939a510.js" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
