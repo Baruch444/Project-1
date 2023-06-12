@@ -1,6 +1,6 @@
-function addTask() {
+const addTask = () => {
     const validation = validate();
-    if(!validation) return false;
+    if (!validation) return false;
 
     const newTask = getTask();
 
@@ -16,8 +16,9 @@ function addTask() {
 
     const addedNote = document.querySelector("#sectionBox .notes:last-child");
     addedNote.classList.add("fade-in");
-}
-function validate() {
+};
+
+const validate = () => {
     const textBox = document.getElementById("textBox");
     const dateBox = document.getElementById("dateBox");
     const timeBox = document.getElementById("timeBox");
@@ -27,34 +28,34 @@ function validate() {
     const text = textBox.value;
     const date = dateBox.value;
     const time = timeBox.value;
-    textBox.style.borderColor , textBox.style.border = "";
+    textBox.style.borderColor, (textBox.style.border = "");
     dateBox.style.borderColor = "";
     timeBox.style.borderColor = "";
     textErr.innerText = "";
     timeErr.innerText = "";
     dateErr.innerText = "";
-    if(text === ""){
+    if (text === "") {
         textErr.innerText = "Missing Task!";
-        textBox.style.border = "3px solid red"
-        // textBox.style.borderColor = ""
+        textBox.style.border = "3px solid red";
         window.event.preventDefault();
         return false;
     }
-    if(date === ""){
+    if (date === "") {
         dateErr.innerText = "Missing Date!!!";
-        dateBox.style.border = "2px solid red"
+        dateBox.style.border = "2px solid red";
         window.event.preventDefault();
         return false;
     }
-    if(time === ""){
+    if (time === "") {
         timeErr.innerText = "Missing Time!!!";
-        timeBox.style.border = "2px solid red"
+        timeBox.style.border = "2px solid red";
         window.event.preventDefault();
         return false;
     }
     return true;
-}
-function getTask() {
+};
+
+const getTask = () => {
     const textBox = document.getElementById("textBox");
     const dateBox = document.getElementById("dateBox");
     const timeBox = document.getElementById("timeBox");
@@ -68,17 +69,20 @@ function getTask() {
         time,
     };
     return newTask;
-}
-function getTaskFromStorage() {
+};
+
+const getTaskFromStorage = () => {
     const taskStr = localStorage.getItem("tasks");
-    const tasks = (taskStr === null) ? [] : JSON.parse(taskStr);
+    const tasks = taskStr === null ? [] : JSON.parse(taskStr);
     return tasks;
-}
-function saveTaskToStorage(arr) {
+};
+
+const saveTaskToStorage = (arr) => {
     const str = JSON.stringify(arr);
     localStorage.setItem("tasks", str);
-}
-function displayTask(taskList) {
+};
+
+const displayTask = (taskList) => {
     const sectionBox = document.getElementById("sectionBox");
     sectionBox.innerHTML = "";
     let index = 0;
@@ -88,9 +92,8 @@ function displayTask(taskList) {
         const trash = `<div class="trash">
             <i class="fa-solid fa-trash-can" onclick="deleteTask(${index})"></i>
             </div>`;
-        if (index === taskList.length - 1) {
-            note.style.opacity = 1;
-        }
+        if (index === taskList.length - 1) note.style.opacity = 1;
+
         note.innerHTML += trash;
         const textNote = document.createElement("p");
         textNote.textContent = newTask.text;
@@ -107,22 +110,25 @@ function displayTask(taskList) {
 
         index++;
     }
-}
-function clearForm() {
+};
+
+const clearForm = () => {
     document.getElementById("textBox").value = "";
     document.getElementById("dateBox").value = "";
     document.getElementById("timeBox").value = "";
     document.getElementById("textBox").focus();
-}
-function loadTasks(){
+};
+
+const loadTasks = () => {
     const tasks = getTaskFromStorage();
     displayTask(tasks);
-}
+};
+
 loadTasks();
 
-function deleteTask(index) {
+const deleteTask = (index) => {
     const taskList = getTaskFromStorage();
-    taskList.splice(index,1);
+    taskList.splice(index, 1);
     saveTaskToStorage(taskList);
     displayTask(taskList);
-}
+};
